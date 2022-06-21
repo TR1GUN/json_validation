@@ -1,0 +1,92 @@
+{
+	"definitions": {},
+	"description": "Суточный профиль тарифного расписания",
+	"title": "Root",
+	"type": "object",
+	"required": [
+		"id",
+		"type",
+		"settings"
+	],
+	"properties": {
+		"id": {
+			"description": "Идентификатор прибора учета",
+			"type": "integer",
+			"examples": [
+				1
+			]
+		},
+		"type": {
+			"type": "string",
+			"description": "Тип рассписания. Допускаются значения: активный (Active, active) или пассивный (Passive, passive) ",
+			"enum": [
+				"Active",
+				"active",
+				"Passive",
+				"passive"
+			],
+			"examples": [
+				"Active"
+			]
+		},
+		"settings": {
+			"type": "array",
+			"description": "Поле настроек",
+			"items": {
+				"type": "object",
+				"required": [
+					"dayId",
+					"ScriptName",
+					"ScriptSelector",
+					"hour",
+					"minute",
+					"second"
+				],
+				"properties": {
+					"dayId": {
+						"description": "Идентификатор дневного профиля",
+						"type": "integer",
+						"examples": [
+							1
+						]
+					},
+					"ScriptName": {
+						"description": "Логическое имя объекта таблицы сценариев",
+						"type": "string",
+						"examples": [
+							"00000A0064FF"
+						]
+					},
+					"ScriptSelector": {
+						"description": "Идентификатор выполняемого сценария",
+						"type": "integer",
+						"examples": [
+							2
+						]
+					},
+					"hour": {
+						"description": "Время, когда будет выполнен сценарий - Значение Часа",
+						"type": "integer",
+						"examples": [
+							14
+						]
+					},
+					"minute": {
+						"description": "Время, когда будет выполнен сценарий - Значение Минуты",
+						"type": "integer",
+						"examples": [
+							42
+						]
+					},
+					"second": {
+						"description": "Время, когда будет выполнен сценарий - Значение Секунды",
+						"type": "integer",
+						"examples": [
+							57
+						]
+					}
+				}
+			}
+		}
+	}
+}

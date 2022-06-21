@@ -1,0 +1,14 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Установка времени прибора учета",
+  "required": [ "id" ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор прибора учета",
+      "examples": [ 1 ]
+    }
+  }
+}

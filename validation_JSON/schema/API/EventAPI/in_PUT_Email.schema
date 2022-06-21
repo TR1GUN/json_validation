@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "table": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "emailName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "emailName"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "emailName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "emailName"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "method",
+    "table",
+    "settings"
+  ]
+}

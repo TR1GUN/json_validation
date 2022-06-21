@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "integer"
+		},
+		"error": {
+			"type": "string"
+		},
+		"settings": {
+			"type": "null"
+		}
+	},
+	"required": [
+		"res"
+	]
+}

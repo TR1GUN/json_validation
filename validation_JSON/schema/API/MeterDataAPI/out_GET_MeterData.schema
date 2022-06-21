@@ -1,0 +1,104 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Данные измерений",
+  "required": ["res", "measures" ],
+  "properties": {
+    “res”: {
+      “type”: “integer”,
+      “description”: “Код ошибки. 0 – успешное выполнение”,
+      “examples”: [ 0 ]
+    },
+    “error”: {
+      “type”: “string”,
+      “description”: “Текстовое описание ошибки”,
+      “examples”: [ "ooups" ]
+    },
+    "measures": {
+      "type": "array",
+      "description": "Массив измерений",
+      "items": {
+        "type": "object",
+        "description": "Данные измерения",
+        "required": [ "measure", "devices" ],
+        "properties": {
+          "measure": {
+            "type": "string",
+            "description": " Тип измерения. См. типы данных приборов учета",
+            "examples": [ "ElConfig" ]
+          },
+          "devices": {
+            "type": "array",
+            "description": "Список данных приборов учета",
+            "items": {
+              "type": "object",
+              "description": "Данные прибора учета",
+              "required": [ "id", "vals", "deviceIdx" ],
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "description": "Относительный идентификатор записи прибора учета в сообщении",
+                  "examples": [ 1 ]
+                },
+                "deviceIdx": {
+                  "type": "integer",
+                  "description": "Идентификатор прибора учета",
+                  "examples": [ 1 ]
+                },
+                "meterId": {
+                  "type": "integer",
+                  "description": "Идентификатор прибора учета",
+                  "examples": [ 1 ]
+                },
+                "serial": {
+                  "type": "string",
+                  "description": "Идентификатор(серийный номер) прибора учета",
+                  "examples": [ "1" ]
+                },
+                "vals": {
+                  "type": "array",
+                  "description": "Набор показаний",
+                  "items": {
+                    "type": "object",
+                    "description": "Показание",
+                    "required": [ "ts", "tags" ],
+                    "properties": {
+                      "ts": {
+                        "type": " integer ",
+                        "description": "Метка времени показания, unix time",
+                        "examples": [ 1 ]
+                      },
+                      "tags": {
+                        "type": "array",
+                        "description": "Набор тегов с данными",
+                        "items": {
+                          "type": "object",
+                          "description": "Данные по тегам",
+                          "required": [ "tag", "val" ],
+                          "properties": {
+                            "tag": {
+                              "type": "string",
+                              "description": "Тег. См. Теги данных приборов учета",
+                              "examples": [ "A+0" ]
+                            },
+                            "val": {
+                              "type": ["double","integer","bool","string"]
+                              "description": "Данные измерения",
+                              "examples": [ 14156440 ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

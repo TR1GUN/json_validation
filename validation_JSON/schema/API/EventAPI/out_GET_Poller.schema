@@ -1,0 +1,39 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "integer"
+		},
+		"settings": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"archTypesName": {
+								"type": "string"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"metersName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"archTypesName",
+							"id"
+						]
+					}
+				}
+			]
+		}
+	},
+	"required": [
+		"res"
+	]
+}

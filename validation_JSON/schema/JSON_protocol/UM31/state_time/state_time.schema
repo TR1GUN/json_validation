@@ -1,0 +1,20 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "description": "Текущее время изделия",
+  "required": [ "time", "sync" ],
+  "properties": {
+    "time": {
+      "type": "string",
+      "description": "Текущее время изделия",
+      "examples": [ "2018-09-16T12:33:52+03:00" ]
+    },
+    "sync": {
+      "type": "boolean",
+      "description": "Признак синхронизированного времени",
+      "examples": [ false ]
+    }
+  }
+}

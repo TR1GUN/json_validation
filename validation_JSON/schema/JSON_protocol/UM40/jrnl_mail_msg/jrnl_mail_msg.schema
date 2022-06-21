@@ -1,0 +1,56 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал хранилища почтовых сообщений",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие изменения состояния хранилища",
+        "required": [ "id", "time", "idMsg", "idSrv", "idTo", "action", "res" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 409 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время события",
+            "examples": [ "2018-09-03T04:54:58+03:00" ]
+          },
+          "idMsg": {
+            "type": "integer",
+            "description": "Идентификатор сообщения",
+            "examples": [ 1977270037 ]
+          },
+          "idSrv": {
+            "type": "integer",
+            "description": "Идентификатор сервера",
+            "examples": [ 1 ]
+          },
+          "idTo": {
+            "type": "integer",
+            "description": "Идентификатор получателя",
+            "examples": [ 1 ]
+          },
+          "action": {
+            "type": "integer",
+            "enum": [ 0, 1, 2 ],
+            "description": "Выполненное действие. 0 – Очистка хранилища. 1 – Добавление сообщения. 2 – Удаление сообщения",
+            "examples": [ 2 ]
+          },
+          "res": {
+            "type": "integer",
+            "enum": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+            "description": "Результат. См. таблица результатов действий с файлами",
+            "examples": [ 0 ]
+          }
+        }
+      }
+    }
+  }
+}

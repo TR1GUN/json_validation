@@ -1,0 +1,45 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"Settings"
+	],
+	"properties": {
+		"Settings": {
+			"type": "array",
+			"description": "Массив настроек подписок на MQTT брокер для каждой группы счетчиков",
+			"items":{
+				"type": "object",
+				"required": [
+					"id",
+					"meterMessageId",
+					"brokerId",
+					"topic"
+				],
+				"properties": {
+					"id": {
+						"type": "integer",
+						"description": "Идитификатор",
+						"examples": [1]
+					},
+					"meterMessageId": {
+						"type": "integer",
+						"description": "ID шаблона отправки сообщений",
+						"examples": [1]
+					},
+					"brokerId": {
+						"type": "integer",
+						"description": "ID Брокера",
+						"examples": [42]
+					},
+					"topic": {
+						"type": "string",
+						"description": "Топик подписки",
+						"examples": ["uri/path"]
+					}
+				}
+			}
+
+		}
+	}
+}

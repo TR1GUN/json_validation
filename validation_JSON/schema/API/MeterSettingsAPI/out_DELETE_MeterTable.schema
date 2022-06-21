@@ -1,0 +1,55 @@
+{
+
+  "definitions": {},
+
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "type": "object",
+
+  "description": "Данные измерений",
+
+  "required": ["res" ],
+
+  "properties": {
+
+    "res": {
+
+      "type": "integer",
+
+      "description": "Результат выполнения запроса. 0 – успешно, прочее – код ошибки",
+
+      "examples": [ "0" ]
+
+    },
+
+    "error": {
+
+      "type": "string",
+
+      "description": "Текстовое описание ошибки",
+
+      "examples": [ "Ошибка!" ]
+
+    },
+
+    "settings": {
+
+      "type": "array",
+
+      "description": "Массив данных настроек. Только в ответ на get запрос",
+
+      "items": {
+
+        "type": "object",
+
+        "description": "Данные настроек. См. ниже",
+
+        "examples": [ 1 ]
+
+      }
+
+    }
+
+  }
+
+}

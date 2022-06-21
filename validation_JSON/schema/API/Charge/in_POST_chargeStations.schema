@@ -1,0 +1,57 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string"
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"table": {
+						"type": "string"
+					},
+					"values": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"type": {
+									"type": "string"
+								},
+								"addr": {
+									"type": "string"
+								},
+								"port": {
+									"type": "integer"
+								},
+								"mqttId": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"addr",
+								"id",
+								"mqttId",
+								"port",
+								"type"
+							]
+						}
+					}
+				},
+				"required": [
+					"table",
+					"values"
+				]
+			}
+		}
+	},
+	"required": [
+		"data",
+		"method"
+	]
+}

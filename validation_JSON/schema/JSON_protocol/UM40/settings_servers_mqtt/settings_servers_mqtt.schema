@@ -1,0 +1,62 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Настройки MQTT cерверов",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройки MQTT сервера",
+        "required": [ "id", "addr", "port", "cropt", "prefix", "deviceID"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор записи",
+            "examples": [ 1 ]
+          },
+
+          "addr": {
+            "type": "string",
+            "description": "Адрес MQTT брокера/MQTT-SN Gateway",
+            "examples": [ "test.mosquitto.org" ]
+          },
+          "login": {
+            "type": "string",
+            "description": "Логин для Сервера",
+            "examples": [ "test_login" ]
+          },
+          "password": {
+            "type": "string",
+            "description": "Пароль для Сервера",
+            "examples": [ "1234567890" ]
+          },
+          "port": {
+            "type": "integer",
+            "description": "Порт",
+            "examples": [ 1883 ]
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Идентификатор топиков у брокера. Используется для формирования топиков",
+            "examples": ["asd321" ]
+          },
+
+          "deviceID": {
+            "type": "string",
+            "description": "Идентификатор устройства у брокера. Используется для формирования топиков",
+            "examples": ["123asd" ]
+          },
+          "cropt": {
+            "type": "integer",
+            "enum" : [ 0, 1, 2 ],
+            "description": "Тип шифрования. 0 - По умолчанию. 1- Без шифрования. 2 - Шифрование соединения ",
+            "examples": [ 0 ]
+          }
+        }
+      }
+    }
+  }
+}

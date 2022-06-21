@@ -1,0 +1,39 @@
+{
+	"definitions": {},
+	"title": "Root",
+	"type": "object",
+  	"description": "Настройки календаря",
+	"required": [
+		"Settings"
+	],
+	"properties": {
+		"Settings": {
+			"title": "Settings",
+			"type": "array",
+      		"description": "Массив настроек",
+			"items":{
+				"title": "Items",
+				"type": "object",
+        		"description": "Настройки Календарей",
+				"required": ["schedulerIds","calendarName"],
+				"properties": {
+					"schedulerIds": {
+            			"description": "Идентификатор Расписания",
+						"type": "array",
+						"items":{
+							"title": "Items",
+							"type": "integer",
+							"examples": [1]
+						}
+					},
+					"calendarName": {
+            			"description": "Имя календаря",
+						"type": "string",
+						"examples": ["test"]
+					}
+				}
+			}
+
+		}
+	}
+}

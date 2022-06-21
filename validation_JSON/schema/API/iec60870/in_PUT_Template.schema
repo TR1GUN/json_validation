@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "enum": [ "post", "put" ]
+    },
+    "table": {
+      "type": "string",
+      "const": "Template"
+
+    },
+    "settings": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "IOA": {
+              "type": "integer"
+            },
+            "meterId": {
+              "type": "integer"
+            },
+            "templateNameId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "IOA",
+            "meterId",
+            "templateNameId"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "method",
+    "table",
+    "settings"
+  ]
+}

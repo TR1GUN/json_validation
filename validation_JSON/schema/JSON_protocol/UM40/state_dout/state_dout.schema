@@ -1,0 +1,31 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Состояние линий питания интерфейсов",
+  "required": [ "State" ],
+  "properties": {
+    "State": {
+      "type": "array",
+      "description": "Массив состояний",
+      "items": {
+        "type": "object",
+        "description": "Состояние линии питания интерфейса",
+        "required": [ "addr", "state" ],
+        "properties": {
+          "addr": {
+            "type": "integer",
+            "description": "Номер линии питания. См. таблицу линий питания",
+            "examples": [ 0 ]
+          },
+          "state": {
+            "type": "integer",
+            "enum": [ 0, 1 ],
+            "description": "Состояние линии питания. 0 – Линия включена. 1 – Линия выключена",
+            "examples": [ 1 ]
+          }
+        }
+      }
+    }
+  }
+}

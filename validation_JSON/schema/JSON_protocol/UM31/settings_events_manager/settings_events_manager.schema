@@ -1,0 +1,43 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "id", "eventType", "eventId", "actionType", "actionId" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор записи",
+            "examples": [ 1 ]
+          },
+          "eventType": {
+            "type": "string",
+            "description": "Тип события. См. типы событий",
+            "examples": [ "Scheduler" ]
+          },
+          "eventId": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 0 ]
+          },
+          "actionType": {
+            "type": "string",
+            "description": "Тип действия. См. типы действий",
+            "examples": [ "Poller" ]
+          },
+          "actionId": {
+            "type": "integer",
+            "description": "Идентификатор действия",
+            "examples": [ 0 ]
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,57 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Запрос данных приборов учета",
+  "required": [ "ids", "tags" ],
+  "properties": {
+    "ids": {
+      "type": "array",
+      "description": "Массив идентификаторов приборов учета. Пустой массив – запрос данных всех приборов учета",
+      "items": {
+        "type": "integer",
+        "description": "Идентификатор прибора учета",
+        "examples": [ 1 ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Набор запрашиваемых тегов. См. теги",
+      "items": {
+        "type": "string",
+        "description": "Тег запрошенных данных",
+        "examples": [ "A+0" ]
+      }
+    },
+    "time": {
+      "type": "array",
+      "description": "Набор временных рамок запроса",
+      "items": {
+        "type": "object",
+        "description": "Временные рамка запроса",
+        "required": [ "start", "end" ],
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "Время начала данных",
+            "examples": [ "2018-09-03T14:17:33+03:00" ]
+          },
+          "end": {
+            "type": "string",
+            "description": "Время окончания данных",
+            "examples": [ "2018-09-03T14:17:33+03:00" ]
+          }
+        }
+      }
+    },
+    "measures": {
+      "type": "array",
+      "description": "Типы запрашиваемых измерений",
+      "items": {
+        "type": "string",
+        "description": "Тип запрошенного измерения. См. типы данных приборов учета",
+        "examples": [ "aDay" ]
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"description": "Данные измерений",
+	"required": [
+		"res",
+		"settings"
+	],
+	"properties": {
+		"res": {
+			"type": "integer",
+			"description": "Результат выполнения запроса. 0 – успешно, прочее – код ошибки",
+			"examples": [
+				"0"
+			]
+		},
+		"error": {
+			"type": "string",
+			"description": "Текстовое описание ошибки",
+			"examples": [
+				"Ошибка!"
+			]
+		},
+		"settings": {
+			"type": "array",
+			"description": "Массив данных настроек. Только в ответ на get запрос",
+			"items": {
+				"type": "object",
+				"description": "Данные типов приборов учета",
+				"required": [
+					"class",
+					"type"
+				],
+				"properties": {
+					"id": {
+						"type": "integer",
+						"description": "Идентификатор прибора учета",
+						"examples": [
+							192
+						]
+					},
+					"class": {
+						"type": "string",
+						"description": "Класс прибора учета",
+						"examples": [
+							"Electric"
+						]
+					},
+					"type": {
+						"type": "string",
+						"description": "Тип прибора учета",
+						"examples": [
+							"Mercury200"
+						]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,84 @@
+{
+	"definitions": {},
+	"type": "object",
+   "description": "Журнал событий",
+	"required": [
+		"Jrnl"
+	],
+	"properties": {
+		"Jrnl": {
+			"type": "array",
+      "description": "Массив событий",
+
+			"default": [],
+			"items":{
+				"type": "object",
+				"required": [
+					"action",
+					"event",
+					"time"
+				],
+				"properties": {
+					"action": {
+						"type": "object",
+      "description": "Массив действий",
+						"required": [
+							"id",
+							"type"
+						],
+						"properties": {
+							"id": {
+								"type": "integer",
+								"description": "Id действия",
+								"examples": [
+									1
+								]
+							},
+							"type": {
+								"type": "string",
+								"description": "Тип действмя",
+								"examples": [
+									"Poller"
+								]
+							}
+						}
+					}
+,
+					"event": {
+						"type": "object",
+								"description": "Массив события",
+						"required": [
+							"id",
+							"type"
+						],
+						"properties": {
+							"id": {
+								"type": "integer",
+								"description": "Id события",
+								"examples": [
+									1
+								]
+							},
+							"type": {
+								"type": "string",
+								"description": "Тип события",
+								"examples": [
+									"Scheduler"
+								]
+							}
+						}
+					}
+,
+					"time": {
+						"type": "integer",
+								"description": "Время действия",
+						"examples": [
+							1234567890
+						]
+					}
+				}
+			}
+
+		}
+	}
+}

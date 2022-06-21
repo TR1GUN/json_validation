@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": [
+				"array",
+				"null"
+			]
+		},
+		"res": {
+			"type": "integer"
+		}
+	},
+	"required": [
+		"res"
+	]
+}

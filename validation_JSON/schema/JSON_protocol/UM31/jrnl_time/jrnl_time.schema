@@ -1,0 +1,40 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал событий изменения времени",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие изменения времени",
+        "required": [ "id", "oldTime", "newTime", "source" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "идентификатор события",
+            "examples": [ 1 ]
+          },
+          "oldTime": {
+            "type": "string",
+            "description": "Время до изменения",
+            "examples": [ "2018-08-24T08:37:48+03:00" ]
+          },
+          "newTime": {
+            "type": "string",
+            "description": "Время после изменения",
+            "examples": [ "2018-08-24T08:37:39+03:00" ]
+          },
+          "source": {
+            "type": "integer",
+            "enum": [0, 1, 2, 3],
+            "description": "Источник изменения времени: 0 - Синхронизация (SNTP), 1 - Установка (RTU-327), 2 - Установка (HTTP), 3 - Установка (Текстовый протокол)",
+            "examples": [2]
+          }
+        }
+      }
+    }
+  }
+}

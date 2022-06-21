@@ -1,0 +1,14 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Установка времени",
+  "required": [ "time" ],
+  "properties": {
+    "time": {
+      "type": "string",
+      "description": "Устанавливаемое время",
+      "examples": ["2018-09-10T03:47:55+03:00"]
+    }
+  }
+}

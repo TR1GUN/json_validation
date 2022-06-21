@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "enum": [ "get" ]
+    },
+    "table": {
+      "type": "string",
+      "const": "COTTypes"
+    }
+  },
+  "required": [
+    "method",
+    "table"
+  ]
+}

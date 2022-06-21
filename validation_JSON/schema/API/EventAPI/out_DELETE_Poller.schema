@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "integer"
+		},
+		"settings": {
+			"type": [
+				"array",
+				"null"
+			]
+		}
+	},
+	"required": [
+		"res"
+	]
+}

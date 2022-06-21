@@ -1,0 +1,35 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал PPP-подключений",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие PPP-подключения",
+        "required": [ "id", "time", "res" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 1 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время подключения",
+            "examples": [ "2018-08-28T10:13:42+03:00" ]
+          },
+          "res": {
+            "type": "integer",
+            "enum": [ 0, 1, 2, 3, 4, 5 ],
+            "description": "Результат подключения. 0 – Результат неизвестен. 1 – Подключение установлено. 2 – Подключение разорвано. 3 – Ошибка инициализации соединения. 4 – Ошибка установки соединения. 5 – Ошибка ожидания соединения",
+            "examples": [ 1 ]
+          }
+        }
+      }
+    }
+  }
+}

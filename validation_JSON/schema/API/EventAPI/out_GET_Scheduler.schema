@@ -1,0 +1,52 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "integer"
+		},
+		"settings": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"day": {
+								"type": "integer"
+							},
+							"hour": {
+								"type": "integer"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"min": {
+								"type": "integer"
+							},
+							"mon": {
+								"type": "integer"
+							},
+							"pattern": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"day",
+							"hour",
+							"id",
+							"min",
+							"mon",
+							"pattern"
+						]
+					}
+				}
+			]
+		}
+	},
+	"required": [
+		"res"
+	]
+}

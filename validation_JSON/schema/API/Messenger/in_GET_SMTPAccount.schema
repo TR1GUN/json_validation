@@ -1,0 +1,21 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string"
+		},
+		"table": {
+			"type": "string"
+		},
+		"emails": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": [
+		"method",
+		"table"
+	]
+}

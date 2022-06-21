@@ -1,0 +1,45 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"Settings"
+	],
+	"properties": {
+		"Settings": {
+			"type": "array",
+			"description": "Массив настроек регулярного отправления сообщений",
+			"items":{
+				"type": "object",
+				"required": [
+					"emailFromId",
+					"emailToId",
+					"id",
+					"meterMessageId"
+				],
+				"properties": {
+					"emailFromId": {
+						"type": "integer",
+						"description": "ID шаблона Email отправителя",
+						"examples": [1]
+					},
+					"emailToId": {
+						"type": "integer",
+						"description": "ID шаблона Email получателя",
+						"examples": [1]
+					},
+					"id": {
+						"type": "integer",
+						"description": "Индентификатор записи",
+						"examples": [1]
+					},
+					"meterMessageId": {
+						"description": "ID шаблона Email сообщения",
+						"type": "integer",
+						"examples": [1]
+					}
+				}
+			}
+
+		}
+	}
+}

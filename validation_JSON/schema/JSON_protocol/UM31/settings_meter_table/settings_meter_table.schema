@@ -1,0 +1,96 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [ "Meters" ],
+  "properties": {
+    "Meters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "id", "pId", "type", "addr", "passRd", "passWr", "line", "iface", "br" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор прибора учета",
+            "examples": [ 1 ]
+          },
+          "pId": {
+            "type": "integer",
+            "description": "Идентификатор родительского устройства",
+            "examples": [ 0 ]
+          },
+          "type": {
+            "type": "integer",
+            "description": "Тип прибора учета. См. типы приборов учета",
+            "examples": [ 1 ]
+          },
+          "addr": {
+            "type": "string",
+            "description": "Адрес прибора учета",
+            "examples": [ "1" ]
+          },
+          "passRd": {
+            "type": "string",
+            "description": "Пароль прибора учета (чтение данных)",
+            "examples": [ "" ]
+          },
+          "passWr": {
+            "type": "string",
+            "description": "Пароль прибора учета (конфигурирование)",
+            "examples": [ "" ]
+          },
+          "line": {
+            "type": "integer",
+            "description": "Линия питания интерфейса. См. выбор линий питания интерфейсов",
+            "examples": [ 0 ]
+          },
+          "iface": {
+            "type": "integer",
+            "description": "Последовательный интерфейс. См. интерфейсы приборов учета",
+            "examples": [ 0 ]
+          },
+          "br": {
+            "type": "integer",
+            "enum" : [ 0, 300, 600, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200 ],
+            "description": "Скорость обмена данными, б/с. 0 – автоматический выбор в зависимости от типа прибора учета",
+            "examples": [ 9600 ]
+          },
+          "size": {
+            "type": "integer",
+            "enum" : [ 7, 8 ],
+            "description": "Размер информационного байта, биты",
+            "examples": [ 8 ]
+          },
+          "parity": {
+            "type": "integer",
+            "enum" : [ 0, 1, 2 ],
+            "description": "Проверка четности. 0 – Нет проверки. 1 – Контроль четности. 2 – Контроль нечетности",
+            "examples": [ 0 ]
+          },
+          "stop": {
+            "type": "integer",
+            "enum" : [ 1, 2 ],
+            "description": "Количество стопбит, биты",
+            "examples": [ 1 ]
+          },
+          "rtuObjType": {
+            "type": "integer",
+            "description": "Тип объекта RTU",
+            "examples": [ 1 ]
+          },
+          "rtuObjNum": {
+            "type": "integer",
+            "description": "Номер объекта RTU",
+            "examples": [ 2 ]
+          },
+          "rtuFider": {
+            "type": "integer",
+            "description": "Номер фидера",
+            "examples": [ 3 ]
+          }
+        }
+      }
+    }
+  }
+}

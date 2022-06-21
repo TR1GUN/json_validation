@@ -1,0 +1,55 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "integer"
+		},
+		"settings": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"port": {
+								"type": "integer"
+							},
+							"address": {
+								"type": "string"
+							},
+							"topicPrefix": {
+								"type": "string"
+							},
+							"uspdId": {
+								"type": "string"
+							},
+							"encrypt": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"address",
+							"encrypt",
+							"id",
+							"port",
+							"topicPrefix",
+							"uspdId"
+						]
+					}
+				}
+			]
+		},
+		"error": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"res"
+	]
+}

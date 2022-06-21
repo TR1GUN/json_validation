@@ -1,0 +1,27 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string",
+      "description": "Тип запроса. Допустимые типы запросов: post, put, delete, get",
+      "examples": [ "delete" ]
+		},
+		"table": {
+			"type": "string",
+		  "description": "Тип настроек. По имени таблицы в БД",
+		  "examples": [ "Manager" ]
+		},
+		"ids": {
+			"type": "array",
+			"items": {
+				"type": "integer",
+				"description": "Идентификатор записи",
+				"examples": [ 1 ]
+			}
+		}
+	},
+	"required": [
+		"method",
+		"table"
+	]
+}

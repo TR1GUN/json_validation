@@ -1,0 +1,34 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Настройки TCP-серверов",
+  "required": [
+    "Settings"
+  ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройка TCP-сервера",
+        "required": ["port", "type" ],
+        "properties": {
+          "port": {
+            "type": "integer",
+            "description": "Порт сервера",
+            "examples": [ 80 ]
+          },
+          "type": {
+            "type": "string",
+            "enum" : ["iface1", "iface2", "iface3", "iface4", "rtu327" ],
+            "description": "Тип сервера. iface1..iface4 – Транзитный сервер на соответствующий интерфейс. rtu327 - Сервер RTU327",
+            "examples": [ "iface1" ]
+          }
+        }
+      }
+    }
+  }
+}
+

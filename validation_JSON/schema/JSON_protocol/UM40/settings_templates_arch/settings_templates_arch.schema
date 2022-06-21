@@ -1,0 +1,31 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "name", "types" ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Имя шаблона",
+            "examples": [ "pupkin" ]
+          },
+          "types": {
+            "type": "array",
+            "description": "Массив типов данных приборов учета",
+            "items": {
+              "type": "string",
+              "description": "Тип данных прибора учета. См. типы данных приборов учета",
+              "examples": [ "ElConfig" ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

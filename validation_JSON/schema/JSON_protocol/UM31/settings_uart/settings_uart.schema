@@ -1,0 +1,60 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Настройки последовательных интерфейсов(UART)",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройка последовательного интерфейса",
+        "required": ["id", "line", "iface", "br", "size", "parity", "stop" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор записи",
+            "examples": [ 1 ]
+          },
+          "line": {
+            "type": "integer",
+            "description": "Линия питания выбранного интерфейса. См. выбор линий питания интерфейсов",
+            "examples": [ 0 ]
+          },
+          "iface": {
+            "type": "integer",
+            "description": "Последовательный интерфейс. См. последовательные интерфейсы",
+            "examples": [ 0 ]
+          },
+          "br": {
+            "type": "integer",
+            "enum" : [ 0, 300, 600, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200 ],
+            "description": "Скорость обмена данными, б/с",
+            "examples": [ 9600 ]
+          },
+          "size": {
+            "type": "integer",
+            "enum" : [ 7, 8 ],
+            "description": "Размер информационного байта, биты",
+            "examples": [ 8 ]
+          },
+          "parity": {
+            "type": "integer",
+            "enum" : [ 0, 1, 2 ],
+            "description": "Проверка четности. 0 – Нет проверки. 1 – Контроль четности. 2 – Контроль нечетности",
+            "examples": [ 0 ]
+          },
+          "stop": {
+            "type": "integer",
+            "enum" : [ 1, 2 ],
+            "description": "Количество стопбит, биты",
+            "examples": [ 1 ]
+          }
+        }
+      }
+    }
+  }
+}
+

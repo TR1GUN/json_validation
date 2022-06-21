@@ -1,0 +1,26 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["method", "table" ],
+  "properties": {
+    "method": {
+      "type": "string",
+      "description": "Тип запроса. Допустимые типы запросов: post, put, delete, get",
+      "examples": [ "post" ]
+    },
+    "table": {
+      "type": "string",
+      "description": "Тип настроек. По имени таблицы в БД",
+      "examples": [ "Scheduler" ]
+    },
+    " settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Данные настроек. См. ниже"
+      }
+    }
+  }
+}

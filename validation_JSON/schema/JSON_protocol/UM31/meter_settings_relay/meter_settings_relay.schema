@@ -1,0 +1,25 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Управление реле прибора учета",
+  "required": [ "id", "relayId", "relayState" ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор прибора учета",
+      "examples": [ 1 ]
+    },
+    "relayId": {
+      "type": "integer",
+      "description": "Идентификатор реле",
+      "examples": [ 1 ]
+    },
+    "relayState": {
+      "type": "integer",
+      "enum" : [ 0, 1 ],
+      "description": "Состояние реле. 0 – Выключено. 1 - Включено",
+      "examples": [ 1 ]
+    }
+  }
+}

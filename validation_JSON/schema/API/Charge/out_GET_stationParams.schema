@@ -1,0 +1,134 @@
+{
+	"type": "object",
+	"properties": {
+		"res": {
+			"type": "number"
+		},
+		"error": {
+			"type": "string"
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"table": {
+						"type": "string"
+					},
+					"values": {
+						"anyOf": [
+							{
+								"type": "null"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"time": {
+											"type": "integer"
+										},
+										"errors": {
+											"type": "integer"
+										},
+										"i": {
+											"type": "number"
+										},
+										"u": {
+											"type": "number"
+										},
+										"p": {
+											"type": "number"
+										},
+										"stationId": {
+											"type": "integer"
+										},
+										"status": {
+											"type": "integer"
+										},
+										"stationTableId": {
+											"type": "integer"
+										},
+										"uIn": {
+											"type": "number"
+										},
+										"temp": {
+											"type": "number"
+										},
+										"ap": {
+											"type": "number"
+										},
+										"apDay": {
+											"type": "number"
+										},
+										"errNoVoltage": {
+											"type": "boolean"
+										},
+										"errLowVoltage": {
+											"type": "boolean"
+										},
+										"errOverVoltage": {
+											"type": "boolean"
+										},
+										"errInsulationIn": {
+											"type": "boolean"
+										},
+										"errPowerOff": {
+											"type": "boolean"
+										},
+										"errOverTemperature": {
+											"type": "boolean"
+										},
+										"errOpen": {
+											"type": "boolean"
+										},
+										"errOverCurrent": {
+											"type": "boolean"
+										},
+										"errInsulationOut": {
+											"type": "boolean"
+										},
+										"errFireAlarm": {
+											"type": "boolean"
+										}
+									},
+									"required": [
+										"ap",
+										"apDay",
+										"errFireAlarm",
+										"errInsulationIn",
+										"errInsulationOut",
+										"errLowVoltage",
+										"errNoVoltage",
+										"errOpen",
+										"errOverCurrent",
+										"errOverTemperature",
+										"errOverVoltage",
+										"errPowerOff",
+										"errors",
+										"i",
+										"p",
+										"stationId",
+										"stationTableId",
+										"status",
+										"temp",
+										"time",
+										"u",
+										"uIn"
+									]
+								}
+							}
+						]
+					}
+				},
+				"required": [
+					"table",
+					"values"
+				]
+			}
+		}
+	},
+	"required": [
+		"res"
+	]
+}

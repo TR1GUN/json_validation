@@ -1,0 +1,231 @@
+{
+
+    "definitions": {},
+
+    "$schema": "http://json-schema.org/draft-07/schema",
+
+    "type": "object",
+
+    "description": "Запрос данных приборов учёта",
+
+    "required": ["job","time","relay","meters"],
+
+    "properties": {
+
+        "job": {
+
+            "type": "string",
+
+            "description": "Тип запроса к прибору учёта",
+
+            "examples": ["DigConfig"]
+
+        },
+
+        "time": {
+
+            "type": "array",
+
+            "description": "Массив временных меток",
+
+            "examples": [[{"start": 1,"end": 1707651442}]],
+
+            "items": {
+
+                "type": "object",
+
+                "description": "Временные метки",
+
+                "examples": [{"start": 1,"end": 1707651442}],
+
+                "required": ["start","end"],
+
+                "properties": {
+
+                    "start": {
+
+                        "type": "long integer",
+
+                        "description": "Начальная метка времени",
+
+                        "examples": [1]
+
+                    },
+
+                    "end": {
+
+                        "type": "long integer",
+
+                        "description": "Конечная метка времени",
+
+                        "examples": [1707651442]}}}},
+
+        "relay": {
+
+            "type": "array",
+
+            "description": "Массив номер и состояние реле",
+
+            "examples": [[{"id": 5,"state": true}]],
+
+            "items": {
+
+                "type": "object",
+
+                "description": "Номер и состояние реле",
+
+                "examples": [{"id": 5,"state": true}],
+
+                "required": ["id","state"],
+
+                "properties": {
+
+                    "id": {
+
+                        "type": "integer",
+
+                        "description": "Номер реле",
+
+                        "examples": [5]
+
+                    },
+
+                    "state": {
+
+                        "type": "boolean",
+
+                        "description": "Состояние реле",
+
+                        "examples": [true]}}}},
+
+        "meters": {
+
+            "type": "array",
+
+            "description": "Массив конфигураций приборов учёта",
+
+            "examples": [[{"type": 91,"iface":"Ethernet","address":"192.168.205.24:5005"},
+
+                          {"type": 192,"iface": "route","address": "1","password": "aa","password2": "bb","uart": "9600,8n1"}]],
+
+            "items": {
+
+                "anyOf": [{
+
+                        "type": "object",
+
+                        "description": "Конфигурация прибора учёта",
+
+                        "examples": [{"type": 91,"iface": "Ethernet","address": "192.168.205.24:5005"}],
+
+                        "required": ["type","iface","address"],
+
+                        "properties": {
+
+                            "type": {
+
+                                "type": "integer",
+
+                                "description": "Тип прибора учета",
+
+                                "examples": [91]
+
+                            },
+
+                            "iface": {
+
+                                "type": "string",
+
+                                "description": "Интерфейс прибора учёта",
+
+                                "examples": ["Ethernet"]
+
+                            },
+
+                            "address": {
+
+                                "type": "string",
+
+                                "description": "Адрес прибора учёта",
+
+                                "examples": ["192.168.205.24:5005"]}}},
+
+                       {"type": "object",
+
+                        "description": "Конфигурация прибора учёта",
+
+                        "examples": [{"type": 192,"iface": "Hub","address": "1","password": "aa","password2": "bb","uart": "9600,8n1"}],
+
+                        "required": ["type","iface","address","password","password2","uart"],
+
+                        "properties": {
+
+                            "type": {
+
+                                "type": "integer",
+
+                                "description": "Тип прибора учета",
+
+                                "examples": [192]
+
+                            },
+
+                            "iface": {
+
+                                "type": "string",
+
+                                "description": "Интерфейс прибора учёта",
+
+                                "examples": ["Hub"]
+
+                            },
+
+                            "address": {
+
+                                "type": "string",
+
+                                "description": "Адрес прибора учёта",
+
+                                "examples": ["1"]
+
+                            },
+
+                            "password": {
+
+                                "type": "string",
+
+                                "description": "Пароль прибора учёта",
+
+                                "examples": ["aa"]
+
+                            },
+
+                            "password2": {
+
+                                "type": "string",
+
+                                "description": "Пароль прибора учёта",
+
+                                "examples": ["bb"]
+
+                            },
+
+                            "deviceidx": {
+
+                                "type": "integer",
+
+                                "description": " DeviceIdx ПУ из таблицы MeterTable ",
+
+                                "examples": ["42"]
+
+                            },
+
+
+
+                            "uart": {
+
+                                "type": "string",
+
+                                "description": "Настройки uart прибора учёта",
+
+                                "examples": ["9600,8n1"]}}}]}}}}

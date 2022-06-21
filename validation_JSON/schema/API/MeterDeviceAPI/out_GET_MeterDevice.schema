@@ -1,0 +1,213 @@
+    "$schema": "http://json-schema.org/draft-07/schema", 
+
+    "type": "object", 
+
+    "description": "Структура JSON ответа на запрос данных прибора учёта.", 
+
+    "examples": [ 
+
+        { 
+
+            "data": { 
+
+                "measures": [ 
+
+                    { 
+
+                        "devices": [ 
+
+                            { 
+
+                                "model": "ST410-6/8HV-0", 
+
+                                "serial": "1", 
+
+                                "vals": [ 
+
+                                    { 
+
+                                        "diff": 0, 
+
+                                        "tags": [ 
+
+                                            { 
+
+                                                "tag": "is_clock", 
+
+                                                «val»: false 
+
+                                            }, 
+
+                                            { 
+
+                                                "tag": "is_dst", 
+
+                                                «val»: false 
+
+                                            } 
+
+                                        ], 
+
+                                        "time": 1589986820}]}], 
+
+                        "type": "DigConfig"}]}, 
+
+            "res": 0}], 
+
+    "required": ["data","res"], 
+
+    "properties": { 
+
+        "data": { 
+
+            "type": "object", 
+
+            "description": "Данные", 
+
+            "required": ["measures"], 
+
+            "properties": { 
+
+                "measures": { 
+
+                    "type": "array", 
+
+                    "description": "Измерения приборов учёта", 
+
+                    "items": { 
+
+                        "anyOf": [ 
+
+                            { 
+
+                                "type": "object", 
+
+                                "description": "", 
+
+                                "required": ["devices","type"], 
+
+                                "properties": { 
+
+                                    "devices": { 
+
+                                        "type": "array", 
+
+                                        "description": "Данные приборов учёта", 
+
+                                        "items": { 
+
+                                            "anyOf": [ 
+
+                                                { 
+
+                                                    "type": "object", 
+
+                                                    "description": "Данные приборов учёта", 
+
+                                                    "required": ["model","serial","vals"], 
+
+                                                    "properties": { 
+
+                                                        "model": { 
+
+                                                            "type": "string", 
+
+                                                            "description": "Название модели прибора учёта", 
+
+                                                            "examples": ["ST410-6/8HV-0"] 
+
+                                                        }, 
+
+                                                        "serial": { 
+
+                                                            "type": "string", 
+
+                                                            "description": "Серийный номер прибора учёта", 
+
+                                                            "examples": ["1"] 
+
+                                                        }, 
+
+                                                        "vals": { 
+
+                                                            "type": "array", 
+
+                                                            "description": "Показания прибора учёта", 
+
+                                                            "items": { 
+
+                                                                "anyOf": [ 
+
+                                                                    { 
+
+                                                                        "type": "object", 
+
+                                                                        "description": "Показания прибора учёта", 
+
+                                                                        "required": ["diff","tags","time"], 
+
+                                                                        "properties": { 
+
+                                                                            "diff": { 
+
+                                                                                "type": "integer", 
+
+                                                                                "description": "Расхождение часов прибора учёта и прибора опроса", 
+
+                                                                                "examples": [0] 
+
+                                                                            }, 
+
+                                                                            "tags": { 
+
+                                                                                "type": "array", 
+
+                                                                                "description": "Типы и значения данных приборов учёта", 
+
+                                                                                "examples": [ 
+
+                                                                                    [ 
+
+                                                                                        { 
+
+                                                                                            "tag": "is_clock", 
+
+                                                                                            «val»: false 
+
+                                                                                        }, 
+
+                                                                                        { 
+
+                                                                                            "tag": "is_dst", 
+
+                                                                                            «val»: false 
+
+                                                                                        } 
+
+                                                                                    ] 
+
+                                                                                ], 
+
+                                                                            "time": { 
+
+                                                                                "type": "integer", 
+
+                                                                                "description": "Время данных прибора учёта", 
+
+                                                                                "examples": [1589986820]}}}],}}}}],}}, 
+
+                                    "type": { 
+
+                                        "type": "string", 
+
+                                        "description": "Типа запроса к прибору учёта", 
+
+                                        "examples": ["DigConfig"]}}}],}}}}, 
+
+        "res": { 
+
+            "type": "integer", 
+
+            "description": "Значение ошибки", 
+
+            "examples": [0]}}} 

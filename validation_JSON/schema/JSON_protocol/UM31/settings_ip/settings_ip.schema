@@ -1,0 +1,64 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"Settings"
+	],
+	"properties": {
+		"Settings": {
+			"type": "array",
+			"description": "Настройки Ethernet",
+			"items":{
+				"type": "object",
+				"required": [
+					"iface",
+					"dhcp",
+					"ip",
+					"netmask",
+					"gw",
+					"dns1",
+					"dns2"
+				],
+				"properties": {
+					"iface": {
+						"type": "string",
+						"description": "Идентификатор интерфеса Ethernet",
+						"required": ["eth0","eth1"],
+						"examples": ["eth0"]
+					},
+					"dhcp": {
+						"type": "boolean",
+						"description": "Разрешение DHCP",
+						"examples": [false]
+					},
+					"ip": {
+						"type": "string",
+						"description": "IP адрес",
+						"examples": ["192.168.0.1"]
+					},
+					"netmask": {
+						"type": "string",
+						"description": "Маска подсети",
+						"examples": [""]
+					},
+					"gw": {
+						"type": "string",
+						"description": "Шлюз",
+						"examples": [""]
+					},
+					"dns1": {
+						"type": "string",
+						"description": "Первичный DNS",
+						"examples": [""]
+					},
+					"dns2": {
+						"type": "string",
+						"description": "Вторичный DNS",
+						"examples": [""]
+					}
+				}
+			}
+
+		}
+	}
+}

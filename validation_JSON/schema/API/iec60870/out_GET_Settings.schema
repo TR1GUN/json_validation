@@ -1,0 +1,235 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "res": 0,
+            "settings": [
+                {
+                    "CASDU": 1,
+                    "k": 12,
+                    "periodicSendTime": 5,
+                    "pollerTime": 1,
+                    "qualityTime": 420,
+                    "spontaneousCheckTime": 1,
+                    "t0": 10,
+                    "t1": 15,
+                    "t2": 10,
+                    "t3": 20,
+                    "w": 8
+                }
+            ],
+            "table": "Settings"
+        }
+    ],
+    "required": [
+        "res",
+        "settings",
+        "table"
+    ],
+    "properties": {
+        "res": {
+            "$id": "#/properties/res",
+            "type": "integer",
+            "title": "The res schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "settings": {
+            "$id": "#/properties/settings",
+            "type": "array",
+            "title": "The settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "CASDU": 1,
+                        "k": 12,
+                        "periodicSendTime": 5,
+                        "pollerTime": 1,
+                        "qualityTime": 420,
+                        "spontaneousCheckTime": 1,
+                        "t0": 10,
+                        "t1": 15,
+                        "t2": 10,
+                        "t3": 20,
+                        "w": 8
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "CASDU": 1,
+                                "k": 12,
+                                "periodicSendTime": 5,
+                                "pollerTime": 1,
+                                "qualityTime": 420,
+                                "spontaneousCheckTime": 1,
+                                "t0": 10,
+                                "t1": 15,
+                                "t2": 10,
+                                "t3": 20,
+                                "w": 8
+                            }
+                        ],
+                        "required": [
+                            "CASDU",
+                            "k",
+                            "periodicSendTime",
+                            "pollerTime",
+                            "qualityTime",
+                            "spontaneousCheckTime",
+                            "t0",
+                            "t1",
+                            "t2",
+                            "t3",
+                            "w"
+                        ],
+                        "properties": {
+                            "CASDU": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/CASDU",
+                                "type": "integer",
+                                "title": "The CASDU schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "k": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/k",
+                                "type": "integer",
+                                "title": "The k schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    12
+                                ]
+                            },
+                            "periodicSendTime": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/periodicSendTime",
+                                "type": "integer",
+                                "title": "The periodicSendTime schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    5
+                                ]
+                            },
+                            "pollerTime": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/pollerTime",
+                                "type": "integer",
+                                "title": "The pollerTime schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "qualityTime": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/qualityTime",
+                                "type": "integer",
+                                "title": "The qualityTime schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    420
+                                ]
+                            },
+                            "spontaneousCheckTime": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/spontaneousCheckTime",
+                                "type": "integer",
+                                "title": "The spontaneousCheckTime schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "t0": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/t0",
+                                "type": "integer",
+                                "title": "The t0 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    10
+                                ]
+                            },
+                            "t1": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/t1",
+                                "type": "integer",
+                                "title": "The t1 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    15
+                                ]
+                            },
+                            "t2": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/t2",
+                                "type": "integer",
+                                "title": "The t2 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    10
+                                ]
+                            },
+                            "t3": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/t3",
+                                "type": "integer",
+                                "title": "The t3 schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    20
+                                ]
+                            },
+                            "w": {
+                                "$id": "#/properties/settings/items/anyOf/0/properties/w",
+                                "type": "integer",
+                                "title": "The w schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    8
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "table": {
+            "$id": "#/properties/table",
+            "type": "string",
+            "title": "The table schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Settings"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

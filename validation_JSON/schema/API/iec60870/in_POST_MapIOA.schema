@@ -1,0 +1,99 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Settings": [
+                {
+                    "IOA": 101,
+                    "valueName": "Chnl1",
+                    "meterId": 4
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Settings"
+    ],
+    "properties": {
+        "Settings": {
+            "$id": "#/properties/Settings",
+            "type": "array",
+            "title": "The Settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "IOA": 101,
+                        "valueName": "Chnl1",
+                        "meterId": 4
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "IOA": 101,
+                                "valueName": "Chnl1",
+                                "meterId": 4
+                            }
+                        ],
+                        "required": [
+                            "IOA",
+                            "valueName",
+                            "meterId"
+                        ],
+                        "properties": {
+                            "IOA": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/IOA",
+                                "type": "integer",
+                                "title": "The IOA schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    101
+                                ]
+                            },
+                            "valueName": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/valueName",
+                                "type": "string",
+                                "title": "The valueName schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Chnl1"
+                                ]
+                            },
+                            "meterId": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/meterId",
+                                "type": "integer",
+                                "title": "The meterId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    4
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string"
+		},
+		"table": {
+			"type": "string"
+		},
+		"settings": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer"
+					},
+					"email": {
+						"type": "string"
+					},
+					"server": {
+						"type": "string"
+					},
+					"port": {
+						"type": "integer"
+					},
+					"userName": {
+						"type": "string"
+					},
+					"userPassword": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"id",
+					"port",
+					"server",
+					"userName",
+					"userPassword"
+				]
+			}
+		}
+	},
+	"required": [
+		"method",
+		"settings",
+		"table"
+	]
+}

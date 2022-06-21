@@ -1,0 +1,99 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Settings": [
+                {
+                    "COTTypeName": "CS101_COT_SPONTANEOUS",
+                    "IOA": 101,
+                    "typeIdName": "M_SP_TB_1"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Settings"
+    ],
+    "properties": {
+        "Settings": {
+            "$id": "#/properties/Settings",
+            "type": "array",
+            "title": "The Settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "COTTypeName": "CS101_COT_SPONTANEOUS",
+                        "IOA": 101,
+                        "typeIdName": "M_SP_TB_1"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "COTTypeName": "CS101_COT_SPONTANEOUS",
+                                "IOA": 101,
+                                "typeIdName": "M_SP_TB_1"
+                            }
+                        ],
+                        "required": [
+                            "COTTypeName",
+                            "IOA",
+                            "typeIdName"
+                        ],
+                        "properties": {
+                            "COTTypeName": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/COTTypeName",
+                                "type": "string",
+                                "title": "The COTTypeName schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "CS101_COT_SPONTANEOUS"
+                                ]
+                            },
+                            "IOA": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/IOA",
+                                "type": "integer",
+                                "title": "The IOA schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    101
+                                ]
+                            },
+                            "typeIdName": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/typeIdName",
+                                "type": "string",
+                                "title": "The typeIdName schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "M_SP_TB_1"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

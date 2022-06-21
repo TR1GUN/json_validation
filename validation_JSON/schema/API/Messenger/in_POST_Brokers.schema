@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string"
+		},
+		"table": {
+			"type": "string"
+		},
+		"settings": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer"
+					},
+					"port": {
+						"type": "integer"
+					},
+					"address": {
+						"type": "string"
+					},
+					"topicPrefix": {
+						"type": "string"
+					},
+					"uspdId": {
+						"type": "string"
+					},
+					"encrypt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"address",
+					"encrypt",
+					"id",
+					"port",
+					"topicPrefix",
+					"uspdId"
+				]
+			}
+		}
+	},
+	"required": [
+		"method",
+		"settings",
+		"table"
+	]
+}

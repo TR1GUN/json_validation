@@ -1,0 +1,59 @@
+{
+	"definitions": {},
+	"description": "Массив настроек",
+	"type": "object",
+	"required": ["Settings"],
+	"properties": {
+		"Settings": {
+			"type": "array",
+			"items":{
+				"type": "object",
+				"required": [
+					"email",
+					"server",
+					"userName",
+					"port",
+					"id",
+					"userPassword"
+				],
+				"properties": {
+					"email": {
+
+						"type": "string",
+						"description": "Электронный адресс",
+						"examples": ["test@gmail.com"]
+					},
+					"server": {
+						"type": "string",
+						"description": "Сервер",
+						"default": "",
+						"examples": ["smtp.gmail.com"]
+					},
+					"userName": {
+						"type": "string",
+						"description": "Имя Пользователя",
+						"examples": ["test"]
+					},
+					"port": {
+
+						"type": "integer",
+						"description": "Порт сервера",
+						"examples": [587]
+
+					},
+					"id": {
+						"type": "integer",
+						"description": "Индификатор записи",
+						"examples": [1]
+					},
+					"userPassword": {
+						"type": "string",
+						"description": "Пароль Пользователя",
+						"examples": ["4c5cgc45hw"]
+					}
+				}
+			}
+
+		}
+	}
+}

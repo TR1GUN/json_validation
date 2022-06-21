@@ -1,0 +1,40 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал авторизации",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие авторизации",
+        "required": [ "id", "time", "login", "lvl" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 1 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время авторизации",
+            "examples": [ "2018-08-29T07:25:02+03:00" ]
+          },
+          "login": {
+            "type": "string",
+            "description": "Имя пользователя (первые 16 символов)",
+            "examples": [ "user" ]
+          },
+          "lvl": {
+            "type": "integer",
+            "enum": [ 0, 1, 2 ],
+            "description": "Уровень доступа. 0 – Доступ запрещен. 1- Пользователь. 2 - Администратор",
+            "examples": [ 1 ]
+          }
+        }
+      }
+    }
+  }
+}

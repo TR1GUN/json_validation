@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Settings": [
+                {
+                    "id": 1,
+                    "meterMessageId": 1,
+                    "brokerId": 42,
+                    "topic": "uri/path"
+                },
+                {
+                    "id": 2,
+                    "meterMessageId": 2,
+                    "brokerId": 42,
+                    "topic": "uri/path"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Settings"
+    ],
+    "properties": {
+        "Settings": {
+            "$id": "#/properties/Settings",
+            "type": "array",
+            "title": "The Settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "id": 1,
+                        "meterMessageId": 1,
+                        "brokerId": 42,
+                        "topic": "uri/path"
+                    },
+                    {
+                        "id": 2,
+                        "meterMessageId": 2,
+                        "brokerId": 42,
+                        "topic": "uri/path"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "id": 1,
+                                "meterMessageId": 1,
+                                "brokerId": 42,
+                                "topic": "uri/path"
+                            }
+                        ],
+                        "required": [
+                            "id",
+                            "meterMessageId",
+                            "brokerId",
+                            "topic"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/id",
+                                "type": "integer",
+                                "title": "The id schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "meterMessageId": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/meterMessageId",
+                                "type": "integer",
+                                "title": "The meterMessageId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "brokerId": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/brokerId",
+                                "type": "integer",
+                                "title": "The brokerId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    42
+                                ]
+                            },
+                            "topic": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/topic",
+                                "type": "string",
+                                "title": "The topic schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "uri/path"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

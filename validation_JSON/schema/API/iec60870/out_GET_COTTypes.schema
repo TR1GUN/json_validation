@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "settings": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "id",
+            "name"
+          ]
+        }
+      ],
+      "additionalItems": true
+    },
+    "table": {
+      "const": "COTTypes" ,
+      "type": "string"
+
+    },
+    "res": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "settings",
+    "table",
+    "res"
+  ]
+}

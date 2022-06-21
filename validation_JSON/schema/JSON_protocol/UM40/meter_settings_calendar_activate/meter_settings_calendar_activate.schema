@@ -1,0 +1,13 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Активация таоифного расписания прибора учета",
+  "required": [ "id" ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор прибора учета",
+      "examples": [ 1 ]
+    }
+  }
+}

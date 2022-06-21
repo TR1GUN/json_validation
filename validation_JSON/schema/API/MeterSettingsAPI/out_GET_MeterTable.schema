@@ -1,0 +1,135 @@
+{
+	"type": "object",
+	"description": "Данные измерений",
+	"required": [
+		"res"
+	],
+	"properties": {
+		"res": {
+			"type": "integer",
+			"description": "Результат выполнения запроса. 0 – успешно, прочее – код ошибки",
+			"examples": [
+				"0"
+			]
+		},
+		"error": {
+			"type": "string",
+			"description": "Текстовое описание ошибки",
+			"examples": [
+				"Ошибка!"
+			]
+		},
+		"settings": {
+			"anyOf": [
+				{
+					"type": "null"
+				},
+				{
+			"type": "array",
+			"description": "Массив данных настроек. Только в ответ на get запрос",
+			"items": {
+				"type": "object",
+				"description": "Таблица приборов учета",
+				"required": [
+					"id",
+					"addr"
+				],
+				"properties": {
+					"index": {
+						"type": "integer",
+						"description": "Уникальный индекс записи в таблице",
+						"examples": [
+							"42"
+						]
+					},
+					"id": {
+						"type": "integer",
+						"description": "Идентификатор прибора учета",
+						"examples": [
+							"42"
+						]
+					},
+					"pId": {
+						"type": "integer",
+						"description": "Идентификатор родительского прибора учета. 0 – родительский ПУ - УСПД",
+						"examples": [
+							"0"
+						]
+					},
+					"type": {
+						"type": "integer",
+						"description": "Идентификатор типа прибора учета",
+						"examples": [
+							"1"
+						]
+					},
+					"typeName": {
+						"type": "string",
+						"description": "Имя типа прибора учета",
+						"examples": [
+							"Mercury200"
+						]
+					},
+					"addr": {
+						"type": "string",
+						"description": "Сетевой адрес прибора учета",
+						"examples": [
+							"12345"
+						]
+					},
+					"passRd": {
+						"type": "string",
+						"description": "Пароль чтения данных прибора учета",
+						"examples": [
+							""
+						]
+					},
+					"passWr": {
+						"type": "string",
+						"description": "Пароль записи данных прибора учета",
+						"examples": [
+							"FFFF"
+						]
+					},
+					"ifaceName": {
+						"type": "string",
+						"description": "Имя интерфейса прибора учета",
+						"examples": [
+							"Iface1"
+						]
+					},
+					"ifaceCfg": {
+						"type": "string",
+						"description": "Настройки интерфейса прибора учета",
+						"examples": [
+							"9600,8n1"
+						]
+					},
+					"rtuObjType": {
+						"type": "integer",
+						"description": "Тип объекта RTU",
+						"examples": [
+							"1"
+						]
+					},
+					"rtuFider": {
+						"type": "integer",
+						"description": "Номер фидера RTU",
+						"examples": [
+							"1"
+						]
+					},
+					"rtuObjNum": {
+						"type": "integer",
+						"description": "Номер объекта RTU",
+						"examples": [
+							"1"
+						]
+					}
+				}
+			}
+		}
+			]
+		}
+	}
+}

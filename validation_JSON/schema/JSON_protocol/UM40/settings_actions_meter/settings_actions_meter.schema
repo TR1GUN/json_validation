@@ -1,0 +1,36 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Настройки регулярного опроса приборов учета",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройки регулярного опроса приборов учета",
+        "required": [ "id", "archTypesName" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор записи",
+            "examples": [ 1 ]
+          },
+          "archTypesName": {
+            "type": "string",
+            "description": "Имя шаблона данных прибора учета",
+            "examples": [ "vasya" ]
+          },
+          "metersName": {
+            "type": "string",
+            "description": "Имя шаблона прибора учета",
+            "examples": [ "pupkin" ]
+          }
+        }
+      }
+    }
+  }
+}
+

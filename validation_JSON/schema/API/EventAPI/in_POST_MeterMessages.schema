@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Settings": [
+                {
+                    "id": 2,
+                    "meterDataTemplateId": 2,
+                    "dataDepth": 42,
+                    "dataClass": "arch"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Settings"
+    ],
+    "properties": {
+        "Settings": {
+            "$id": "#/properties/Settings",
+            "type": "array",
+            "title": "The Settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "id": 2,
+                        "meterDataTemplateId": 2,
+                        "dataDepth": 42,
+                        "dataClass": "arch"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "id": 2,
+                                "meterDataTemplateId": 2,
+                                "dataDepth": 42,
+                                "dataClass": "arch"
+                            }
+                        ],
+                        "required": [
+                            "id",
+                            "meterDataTemplateId",
+                            "dataDepth",
+                            "dataClass"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/id",
+                                "type": "integer",
+                                "title": "The id schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    2
+                                ]
+                            },
+                            "meterDataTemplateId": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/meterDataTemplateId",
+                                "type": "integer",
+                                "title": "The meterDataTemplateId schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    2
+                                ]
+                            },
+                            "dataDepth": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/dataDepth",
+                                "type": "integer",
+                                "title": "The dataDepth schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    42
+                                ]
+                            },
+                            "dataClass": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/dataClass",
+                                "type": "string",
+                                "title": "The dataClass schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "arch"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

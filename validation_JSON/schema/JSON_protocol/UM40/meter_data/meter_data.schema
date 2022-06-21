@@ -1,0 +1,38 @@
+
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"ids",
+		"measures"
+	],
+	"properties": {
+		"ids": {
+			"type": "array",
+            "description": "Массив Идентификаторов приборов учета",
+			"items":{
+				"type": "integer",
+				"description": "Идентификатор прибора учета",
+				"examples": [1]
+			}
+		},
+		"tags": {
+			"type": "array",
+            "description": "Массив Идентификаторов запрашивыемых измерений",
+			"items":{
+				"type": "string",
+				"description": "Запрашивыемые измерения",
+				"examples": ["A+0"]
+			}
+		},
+		"measures": {
+			"type": "array",
+            "description": "Массив Идентификаторов запрашивыемых типов данных",
+			"items":{
+				"type": "string",
+				"description": "Запрашивыемые типы данных",
+				"examples": ["ElMomentEnergy"]
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Настройки SIM-карт",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройки SIM-карт",
+        "required": [ "id" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор SIM-карты (по слоту)",
+            "enum" : [ 1, 2 ],
+            "examples": [ 1 ]
+          },
+          "pin": {
+            "type": "string",
+            "description": "PIN-код SIM-карты, 4 цифры",
+            "examples": [ "1234" ]
+          },
+          "enable": {
+            "type": "boolean",
+            "description": "Разрешение подключения к точке доступа",
+            "examples": [ true ]
+          },
+          "addr": {
+            "type": "string",
+            "description": "Адрес точки доступа",
+            "examples": [ "static.beeline.ru" ]
+          },
+          "auth": {
+            "type": "boolean",
+            "description": "Необходимость авторизации",
+            "examples": [ true  ]
+          },
+          "login": {
+            "type": "string",
+            "description": "Логин",
+            "examples": [ "beeline" ]
+          },
+          "password": {
+            "type": "string",
+            "description": "Пароль",
+            "examples": [ "beeline" ]
+          }
+        }
+      }
+    }
+  }
+}
+

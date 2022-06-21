@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "table": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "pId": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "integer"
+            },
+            "typeName": {
+              "type": "string"
+            },
+            "addr": {
+              "type": "string"
+            },
+            "passRd": {
+              "type": "string"
+            },
+            "passWr": {
+              "type": "string"
+            },
+            "ifaceName": {
+              "type": "string"
+            },
+            "ifaceCfg": {
+              "type": "string"
+            },
+            "rtuObjType": {
+              "type": "integer"
+            },
+            "rtuFider": {
+              "type": "integer"
+            },
+            "rtuObjNum": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "pId",
+            "type",
+            "typeName",
+            "addr",
+            "passRd",
+            "passWr",
+            "ifaceName",
+            "ifaceCfg",
+            "rtuObjType",
+            "rtuFider",
+            "rtuObjNum"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "method",
+    "table",
+    "settings"
+  ]
+}

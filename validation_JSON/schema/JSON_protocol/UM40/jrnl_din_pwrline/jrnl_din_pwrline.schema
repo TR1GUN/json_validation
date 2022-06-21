@@ -1,0 +1,40 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал изменения состояния дискретных входов",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие изменения состояния",
+        "required": [ "id", "time", "sens", "state" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 1 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время изменения состояния",
+            "examples": [ "2018-08-29T07:09:04+03:00" ]
+          },
+          "sens": {
+            "type": "integer",
+            "description": "Идентификатор дискретного входа. См. таблицу дискретных входов",
+            "examples": [ 0 ]
+          },
+          "state": {
+            "type": "integer",
+            "enum": [ 0, 1 ],
+            "description": "Установленное состояние. 0 - Замкнут. 1 - Разомкнут",
+            "examples": [ 0 ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "table": "MapIOA",
+            "res": 0
+        }
+    ],
+    "required": [
+        "table",
+        "res"
+    ],
+    "properties": {
+        "table": {
+            "$id": "#/properties/table",
+            "type": "string",
+            "title": "The table schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "MapIOA"
+            ]
+        },
+        "res": {
+            "$id": "#/properties/res",
+            "type": "integer",
+            "title": "The res schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        }
+    },
+    "additionalProperties": true
+}

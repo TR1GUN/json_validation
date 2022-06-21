@@ -1,0 +1,50 @@
+{
+	"definitions": {},
+	"type": "object",
+	"required": [
+		"Settings"],
+	"properties": {
+		"Settings": {
+			"type": "array",
+            "description": "Массив шаблонов Ответов",
+			"items": {
+				"type": "object",
+				"required": [
+					"id",
+					"meterDataTemplateId",
+					"dataDepth",
+					"meterTemplateId",
+					"dataClass"
+				],
+				"properties": {
+					"id": {
+						"type": "integer",
+						"description": "Индификатор",
+						"examples": [3]
+					},
+					"meterDataTemplateId": {
+						"type": "integer",
+						"description": "ID шаблона данных прибора учета",
+						"examples": [1]
+					},
+					"dataDepth": {
+						"type": "integer",
+						"description": "Описание",
+						"examples": [44]
+					},
+					"meterTemplateId": {
+						"type": "integer",
+						"description": "ID Шаблона приборов учета",
+						"examples": [1]
+					},
+					"dataClass": {
+						"type": "string",
+						"description": "Описание типа данных",
+						"examples": ["moment"]
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Settings": [
+                {
+                    "schedulerIds": [
+                        1
+                    ],
+                    "calendarName": "test"
+                },
+                {
+                    "schedulerIds": [
+                        2,
+                        3,
+                        4
+                    ],
+                    "calendarName": "test2"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Settings"
+    ],
+    "properties": {
+        "Settings": {
+            "$id": "#/properties/Settings",
+            "type": "array",
+            "title": "The Settings schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "schedulerIds": [
+                            1
+                        ],
+                        "calendarName": "test"
+                    },
+                    {
+                        "schedulerIds": [
+                            2,
+                            3,
+                            4
+                        ],
+                        "calendarName": "test2"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/Settings/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/Settings/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "schedulerIds": [
+                                    1
+                                ],
+                                "calendarName": "test"
+                            }
+                        ],
+                        "required": [
+                            "schedulerIds",
+                            "calendarName"
+                        ],
+                        "properties": {
+                            "schedulerIds": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/schedulerIds",
+                                "type": "array",
+                                "title": "The schedulerIds schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "examples": [
+                                    [
+                                        1
+                                    ]
+                                ],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/Settings/items/anyOf/0/properties/schedulerIds/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/Settings/items/anyOf/0/properties/schedulerIds/items/anyOf/0",
+                                            "type": "integer",
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": 0,
+                                            "examples": [
+                                                1
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "calendarName": {
+                                "$id": "#/properties/Settings/items/anyOf/0/properties/calendarName",
+                                "type": "string",
+                                "title": "The calendarName schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "test"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,21 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "description": "Настройки локального времени",
+  "required": [ "tz" ],
+  "properties": {
+    "tz": {
+      "type": "integer",
+      "description": "Часовой пояс",
+      "examples": [ 3 ]
+    },
+    "dst": {
+      "type": "boolean",
+      "description": "Разрешение смены сезонов",
+      "examples": [ false ]
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string"
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"table": {
+						"type": "string"
+					},
+					"ids": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						}
+					}
+				},
+				"required": [
+					"table"
+				]
+			}
+		}
+	},
+	"required": [
+		"data",
+		"method"
+	]
+}

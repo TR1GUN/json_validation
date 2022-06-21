@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "enum": [ "get", "delete" ]
+    },
+    "table": {
+      "type": "string",
+      "const": "Template"
+    }
+  },
+  "required": [
+    "method",
+    "table"
+  ]
+}

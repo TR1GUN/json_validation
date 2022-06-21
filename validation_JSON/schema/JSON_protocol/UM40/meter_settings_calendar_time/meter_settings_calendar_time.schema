@@ -1,0 +1,38 @@
+{
+	"definitions": {},
+	"title": "Root",
+	"type": "object",
+	"description": "Дата активации тарифного расписания прибора учета",
+	"required": [
+		"id",
+		"settings"
+				],
+	"properties": {
+		"id": {
+			"type": "integer",
+			"description": "Идентификатор прибора учета",
+			"examples": [1]
+		},
+		"settings": {
+			"type": "array",
+			"description": "Поле настроек времени",
+			"items":{
+				"type": "object",
+				"required": [
+					"ActivateTime"
+							],
+				"properties": {
+					"ActivateTime": {
+						"description": "Время активации тарифного расписания для прибора учета. Указывается в Unixtime по гринвичу. Это важно",
+						"type": "integer",
+						"examples": [
+							1649082459
+						],
+						"default": 0
+					}
+				}
+			}
+
+		}
+	}
+}

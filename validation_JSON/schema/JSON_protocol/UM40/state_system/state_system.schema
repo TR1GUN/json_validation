@@ -1,0 +1,103 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Информация о конфигурации системы",
+  "required": [ "fw", "bl", "SystemInfo" ],
+  "properties": {
+    "fw": {
+      "type": "string",
+      "description": "Версия программного обеспечения устройства",
+      "examples": [ "1.2.1234" ]
+    },
+    "bl": {
+      "type": "string",
+      "description": "Версия программного обеспечения загрузчика",
+      "examples": [ "1.2.1234" ]
+    },
+    "SystemInfo": {
+      "type": "object",
+      "description": "Информация о аппаратном обеспечении",
+      "required": [ "MODEL", "REV", "SN", "DATE", "DF", "BAT", "IF", "MAC", "MAIN_PWR", "MODEM" ],
+      "properties": {
+        "MODEL": {
+          "type": "string",
+          "title": "Модель устройства",
+          "examples": [ "31" ]
+        },
+        "REV": {
+          "type": "string",
+          "title": "Версия платы",
+          "examples": [ "0001" ]
+        },
+        "SN": {
+          "type": "string",
+          "title": "Серийный номер",
+          "examples": [ "123456789012" ]
+        },
+	"DATE": {
+          "type": "string",
+          "title": "Дата выпуска",
+          "examples": [ "2018-06-13T17:07:48+03:00" ]
+        },
+        "DF": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "TYPE": {
+                "type": "string",
+                "title": "Тип DataFlash",
+                "examples": [ "AT26DF321" ]
+              },
+              "NUM": {
+                "type": "integer",
+                "title": "Номер DataFlash",
+                "examples": [ 1 ]
+              }
+            }
+          }
+        },
+        "BAT": {
+          "type": "string",
+          "title": "Информация о батарее",
+          "examples": [ "3.7V,1800mAh" ]
+        },
+        "IF": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "TYPE": {
+                "type": "string",
+                "title": "Тип интерфейса",
+                "examples": ["RS485" ]
+              },
+              "NUM": {
+                "type": "integer",
+                "title": "Номер интерфейса",
+                "examples": [ 1 ]
+              }
+            }
+          }
+        },
+        "MAC": {
+          "type": "string",
+          "title": "MAC-адрес",
+          "examples": [ "00:50:C2:ED:A0:01" ]
+        },
+        "MAIN_PWR": {
+          "type": "string",
+          "title": "Основное питание ",
+          "examples": [ "220/9" ]
+        },
+        "MODEM": {
+          "type": "string",
+          "title": "Информация о модеме ",
+          "examples": [ "UG95E(NAR01A09E1G)" ]
+        }
+      }
+    }
+  }
+}
+

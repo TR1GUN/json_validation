@@ -1,0 +1,45 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал сетевых подключений",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие сетевого подключения",
+        "required": [ "id", "time", "server", "client", "iface" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 1 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время подключения",
+            "examples": [ "2018-08-27T10:19:52+03:00" ]
+          },
+          "server": {
+            "type": "string",
+            "description": "Адрес сервера",
+            "examples": [ "192.168.202.95:80" ]
+          }, -
+          "client": {
+            "type": "string",
+            "description": "Адрес клиента",
+            "examples": [ "218.18.6.32:54221" ]
+          },
+          "iface": {
+            "type": "integer",
+            "enum": [ 0, 1, 2 ],
+            "description": "Сетевой интерфейс. 0 - Неизвестно. 1 - Ethernet. 2 - Модем(GPRS)",
+            "examples": [ 1 ]
+          }
+        }
+      }
+    }
+  }
+}

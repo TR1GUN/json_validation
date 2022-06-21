@@ -1,0 +1,46 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Настройки расписаний",
+  "required": [ "Settings" ],
+  "properties": {
+    "Settings": {
+      "type": "array",
+      "description": "Массив настроек",
+      "items": {
+        "type": "object",
+        "description": "Настройки расписания",
+        "required": [ "id" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор записи",
+            "examples": [ 1 ]
+          },
+          "min": {
+            "type": "integer",
+            "description": "минуты",
+            "examples": [ 5 ]
+          },
+          "hour": {
+            "type": "integer",
+            "description": "Часы",
+            "examples": [ 0 ]
+          },
+          "day": {
+            "type": "integer",
+            "description": "Дни",
+            "examples": [ 0 ]
+          },
+          "month": {
+            "type": "integer",
+            "description": "Месяцы",
+            "examples": [ 0 ]
+          }
+        }
+      }
+    }
+  }
+}
+

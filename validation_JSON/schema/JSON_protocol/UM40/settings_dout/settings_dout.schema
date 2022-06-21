@@ -1,0 +1,28 @@
+{
+	"definitions": {},
+	"type": "object",
+	"description": "Настройки линий питания интерфейсов",
+	"required": ["Settings"],
+	"properties": {
+		"Settings": {
+			"type": "array",
+			"items":{
+				"type": "object",
+				"required": ["addr", "state"],
+				"properties": {
+					"addr": {
+						"type": "string",
+						"description": "Линия питания интерфейса. См. линии питания интерфейсов",
+						"examples": ["/dev/ttyUSB3"]
+					},
+					"state": {
+						"type": "string",
+						"description": "Режим работы линии. 0 – Автоматически (включение при передаче данных по связанному последовательному интерфейсу). 1 – Всегда включено. 2 – Всегда выключено",
+						"examples": ["toggle"]
+					}
+				}
+			}
+
+		}
+	}
+}

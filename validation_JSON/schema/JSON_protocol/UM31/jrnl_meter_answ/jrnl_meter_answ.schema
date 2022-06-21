@@ -1,0 +1,54 @@
+{
+  "definitions": {},
+  "type": "object",
+  "description": "Журнал фиксации ответов приборов учета",
+  "required": [ "Jrnl" ],
+  "properties": {
+    "Jrnl": {
+      "type": "array",
+      "description": "Массив событий",
+      "items": {
+        "type": "object",
+        "description": "Событие изменения статуса ответов прибора учета",
+        "required": [ "id", "time", "idMeter", "type", "iface", "addr",  "answer" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор события",
+            "examples": [ 1 ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Время изменения статуса ответов",
+            "examples": [ "2018-09-05T14:13:07+03:00" ]
+          },
+          "idMeter": {
+            "type": "integer",
+            "description": "Идентификатор прибора учета",
+            "examples": [ 1 ]
+          },
+          "type": {
+            "type": "integer",
+            "description": "Тип прибора учета. См. типы приборов учета",
+            "examples": [ 23 ]
+          },
+          "iface": {
+            "type": "integer",
+            "description": "Интерфейс прибора учета. См. интерфейсы приборов учета",
+            "examples": [ 2 ]
+          },
+          "addr": {
+            "type": "string",
+            "description": "Адрес прибора учета",
+            "examples": [ "7220" ]
+          },
+          "answer": {
+            "type": "boolean",
+            "description": "Статус наличия ответов прибора учета",
+            "examples": [ false ]
+          }
+        }
+      }
+    }
+  }
+}

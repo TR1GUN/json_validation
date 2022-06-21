@@ -1,0 +1,72 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [ "Meters" ],
+  "properties": {
+    "Meters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "id", "pId", "typeName", "addr", "passRd", "passWr", "ifaceName", "ifaceCfg" ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Идентификатор прибора учета",
+            "examples": [ 1 ]
+          },
+          "pId": {
+            "type": "integer",
+            "description": "Идентификатор родительского устройства",
+            "examples": [ 0 ]
+          },
+          "typeName": {
+            "type": "string",
+            "description": "Тип прибора учета. См. типы приборов учета",
+            "examples": [ "M23x" ]
+          },
+          "addr": {
+            "type": "string",
+            "description": "Адрес прибора учета",
+            "examples": [ "1" ]
+          },
+          "passRd": {
+            "type": "string",
+            "description": "Пароль прибора учета (чтение данных)",
+            "examples": [ "" ]
+          },
+          "passWr": {
+            "type": "string",
+            "description": "Пароль прибора учета (конфигурирование)",
+            "examples": [ "" ]
+          },
+          "ifaceName": {
+            "type": "string",
+            "description": "Последовательный интерфейс. См. интерфейсы приборов учета",
+            "examples": [ "iface1" ]
+          },
+          "ifaceCfg": {
+            "type": ["integer","null", "string"],
+            "description": "Настройки обмена данными. Пустая строка – настройки по умолчанию",
+            "examples": [ "9600,8n1" ]
+          },
+          "rtuObjType": {
+            "type": ["integer","null"],
+            "description": "Тип объекта RTU",
+            "examples": [ 1 ]
+          },
+          "rtuObjNum": {
+            "type": ["integer","null"],
+            "description": "Номер объекта RTU",
+            "examples": [ 2 ]
+          },
+          "rtuFider": {
+            "type": ["integer","null"],
+            "description": "Номер фидера",
+            "examples": [ 3 ]
+          }
+        }
+      }
+    }
+  }
+}

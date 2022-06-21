@@ -1,0 +1,89 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Запрос данных приборов учета",
+  "required": ["method", "measures" ],
+  "properties": {
+    "method": {
+      "type": "string",
+      "description": "Тип запроса. Допустимые типы запросов: get",
+      "examples": [ "post" ]
+    },
+    "ids": {
+      "type": "array",
+      "description": "Массив идентификаторов приборов учета (meterId)",
+      "items": {
+        "type": "integer",
+        "description": "Идентификатор прибора учета",
+        "examples": [ 1 ]
+      }
+    },
+    "devices": {
+      "type": "array",
+      "description": "Массив индексов приборов учета (deviceIdx)",
+      "items": {
+        "type": "integer",
+        "description": "Индекс прибора учета",
+        "examples": [ 1 ]
+      }
+    },
+    "serial": {
+      "type": "array",
+      "description": "Массив серийных номеров приборов учета",
+      "items": {
+        "type": "string",
+        "description": "Серийный номер прибора учета",
+        "examples": [ 1 ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Набор запрашиваемых тегов. См. теги",
+      "items": {
+        "type": "string",
+        "description": "Тег запрошенных данных",
+        "examples": [ "A+0" ]
+      }
+    },
+    "time": {
+      "type": "array",
+      "description": "Набор временных рамок запроса",
+      "items": {
+        "type": "object",
+        "description": "Временные рамка запроса",
+        "required": [ "start", "end" ],
+        "properties": {
+          "start": {
+            "type": "integer",
+            "description": "Время начала данных",
+            "examples": [ "0" ]
+          },
+          "end": {
+            "type": "integer",
+            "description": "Время окончания данных",
+            "examples": [ "1" ]
+          }
+        }
+      }
+    },
+    "measures": {
+      "type": "array",
+      "description": "Типы запрашиваемых измерений",
+      "items": {
+        "type": "string",
+        "description": "Тип запрошенного измерения. См. типы данных приборов учета",
+        "examples": [ "aDay" ]
+      }
+    },
+    "flags": {
+      "type": "array",
+      "description": "Массив специальных флагов",
+      "items": {
+        "type": "text",
+        "description": "Флаги запроса данных. lastTime – запрос последних по времени данных. allMeters – запрос данных все ПУ",
+        "examples": [ "lastTime" ]
+      }
+    }
+  }
+}

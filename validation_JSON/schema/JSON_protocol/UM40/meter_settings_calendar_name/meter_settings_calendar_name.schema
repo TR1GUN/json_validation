@@ -1,0 +1,56 @@
+{
+	"definitions": {},
+	"description": "Имя календаря тарифного расписания",
+	"title": "Root",
+	"type": "object",
+	"required": [
+		"id",
+		"type",
+		"settings"
+	],
+	"properties": {
+		"id": {
+			"description": "Идентификатор прибора учета",
+			"type": "integer",
+			"examples": [
+				1
+			]
+		},
+		"type": {
+
+			"type": "string",
+"description": "Тип рассписания. Допускаются значения: активный (Active, active) или пассивный (Passive, passive) ",
+			"enum": [
+				"Active",
+				"active",
+				"Passive",
+				"passive"
+			],
+			"examples": [
+				"Active"
+			]
+		},
+		"settings": {
+			"description": "Поле настроек",
+			"type": "array",
+			"default": [],
+			"items":{
+				"description": "Настройки расписаний",
+				"type": "object",
+				"required": [
+					"CalendarName"
+				],
+				"properties": {
+					"CalendarName": {
+						"description": "Идентификатор (Имя) сезонного календаря",
+						"type": "string",
+						"examples": [
+							"44656661756C74"
+						]
+					}
+				}
+			}
+
+		}
+	}
+}
